@@ -1,0 +1,14 @@
+.footer{
+    background-color: rgba($color: $primary, $alpha: 0.85);
+    padding: $paddingSection 0;
+    &__logo{
+        display: block;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    .logo_pic{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}

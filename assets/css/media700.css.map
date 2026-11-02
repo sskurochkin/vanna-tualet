@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,MAAM,EAAE,SAAS,EAAE,KAAK;EAEpB,AAAA,YAAY,CAAC,EAAE,CAAA;IACX,SAAS,EAAE,IAAI;GAClB;EACD,AAAA,SAAS,CAAA;IACL,gBAAgB,EAAE,IAAI;GACzB",
+    "sources": [
+        "../../#src/scss/media700.scss"
+    ],
+    "names": [],
+    "file": "media700.css"
+}

@@ -1,0 +1,4 @@
+User-agent: *
+Host: www.vanna-tualet.by
+Disallow: /admin/
+Disallow: /phpmailer/

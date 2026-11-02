@@ -1,0 +1,234 @@
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html {
+    -webkit-text-size-adjust: 100%;
+    font-size: 10px;
+    line-height: 1.17;
+}
+html, body {
+    padding: 0;
+    margin: 0;
+    background: #000;
+    color: #fff;
+    font-family: 'Menlo', sans-serif;
+}
+a {
+    background-color: transparent;
+    text-decoration: none;
+    -webkit-transition: opacity .25s;
+    transition: opacity .25s;
+}
+a:hover {
+    opacity: .75;
+}
+p {
+    margin: 0 0 1.5rem;
+}
+img {
+    max-width: 100%;
+    border-style: none;
+}
+@font-face {
+    font-family: 'Menlo';
+    src: url(fonts/MenloRegular.woff2) format("woff2"), url(fonts/MenloRegular.woff) format("woff")
+}
+.page {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.page__wrap {
+    position: relative;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    z-index: 3;
+}
+.container {
+    width: 100%;
+    max-width: 1600px;
+    padding: 0 30px;
+    margin: 0 auto;
+}
+.fullscreen-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    min-width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    overflow: hidden;
+    z-index: 1;
+}
+.page::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,.35);
+    z-index: 2;
+}
+.header, .main, .footer {
+    padding: 0;
+    margin: 0;
+}
+.header__wrap {
+    text-align: center;
+    padding: 35px 0;
+}
+.footer__wrap {
+    padding: 35px 0 25px;
+}
+main {
+    display: block;
+}
+.logo {
+    display: inline-block;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 1.2rem;
+    line-height: 1;
+    letter-spacing: .28rem;
+}
+.logo img {
+    margin-bottom: 11px;
+}
+.banner {
+    font-size: 1.6rem;
+    text-align: center;
+}
+h1,.h1 {
+    margin: 0 0 2.5rem;
+    padding: 0;
+    color: #fff;
+    font-size: 3rem;
+    line-height: 1.2;
+    letter-spacing: .1em;
+    font-weight: normal;
+}
+.cursor {
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    height: 6px;
+    top: 4px;
+    line-height: 1;
+    background: #fff;
+}
+.cursor_animate {
+    animation: animationCursor .35s ease-in-out infinite alternate;
+}
+.menu {
+    display: block;
+    padding: 0;
+    margin: 0 -12px;
+    text-align: center;
+}
+.menu__item {
+    display: inline-block;
+    margin: 0 0 12px;
+    padding: 0 12px;
+}
+.menu__item > a,
+.menu__item > span {
+    display: inline-block;
+    font-size: 1.2rem;
+    color: #fff;
+    text-transform: uppercase;
+}
+@-webkit-keyframes animationCursor {
+    from {
+        -webkit-transform: scale(1,1) translateY(0);
+        transform: scale(1,1) translateY(0);
+    }
+    to {
+        -webkit-transform: scale(0.5,0.5) translateY(3px);
+        transform: scale(0.5,0.5) translateY(3px);
+    }
+}
+@keyframes animationCursor {
+    from {
+        -webkit-transform: scale(1,1) translateY(0);
+        transform: scale(1,1) translateY(0);
+    }
+    to {
+        -webkit-transform: scale(0.5,0.5) translateY(3px);
+        transform: scale(0.5,0.5) translateY(3px);
+    }
+}
+@media (max-width: 767px) {
+    .cursor {
+        width: 24px;
+        height: 4px;
+    }
+    .banner p br {content: ""}
+    .banner p br::after {content: "\00a0"}
+}
+@media (min-width: 768px) {
+    .footer__wrap {
+        padding: 50px 0 40px;
+    }
+    .header__wrap {
+        text-align: left;
+    }
+    .container {
+        padding: 0 60px;
+    }
+    .banner {
+        font-size: 2rem;
+    }
+    h1,.h1 {
+        margin: 0 0 4.5rem;
+        font-size: 5rem;
+    }
+    .menu {
+        margin: 0 -22px;
+    }
+    .menu__item > a,
+    .menu__item > span {
+        font-size: 1.4rem;
+    }
+    .menu__item {
+        padding: 0 22px;
+    }
+}
+@media (min-width: 992px) {
+    .container {
+        padding: 0 80px;
+    }
+    .banner {
+        padding: 0 10%;
+        font-size: 2.4rem;
+    }
+    h1,.h1 {
+        font-size: 6rem;
+    }
+}
+
+@media (min-width: 1280px) {
+    h1,.h1 {
+        font-size: 6.4rem;
+    }
+}
+@media (min-height: 650px) and (min-width: 768px) {
+    .footer__wrap {
+        padding: 86px 0 76px;
+    }
+}

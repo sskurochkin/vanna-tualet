@@ -1,0 +1,74 @@
+.review{
+    padding: $paddingSection 0;
+    .slider{
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    &__title{
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .card__wrapper{
+        padding: 20px 50px;
+    }
+    &__card{
+        position: relative;
+        background-color: rgba($color: #f8f8f8, $alpha: 0.2);
+        padding: 20px;
+        margin-bottom: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 20px rgba($color: $primary, $alpha: 0.2);
+        &::before,
+        &:after{
+            content: "";
+            position: absolute;
+            margin: auto;
+            display: block;
+            width: 70px;
+            height: 50px;
+            background-image: url(../../assets/img/quote.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            opacity: .1;
+        }
+        &::before{
+            top: 20px;
+            right: 20px;
+        }
+        &::after{
+            bottom: 10px;
+            left: 20px;
+            transform: rotate(180deg);
+        }
+        .card__avatar{
+            display: flex;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #d1d1d1;
+            margin-bottom: 15px;
+            align-items: center;
+        }
+        .card__pic{
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            margin-right: 30px;
+        }
+        .card__title{
+            margin-bottom: 10px;
+            font-size: 20px;
+            text-align: left;
+        }
+        .card__subtitle{
+            text-align: left;
+            font-size: 15px;
+        }
+        .card__text{
+            text-align: left;
+        }
+    }
+
+}
+
+
+
