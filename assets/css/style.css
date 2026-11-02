@@ -617,6 +617,7 @@ section {
 		margin: 0 -20px; }
 
 .form__item {
+		position: relative;
 		padding: 0 20px;
 		margin-bottom: 20px;
 		-webkit-box-flex: 1;
@@ -665,6 +666,24 @@ section {
 ._error {
 		-webkit-box-shadow: 0 0 5px red;
 		        box-shadow: 0 0 5px red; }
+
+.form__phone-error {
+		position: absolute;
+		left: 20px;
+		right: 20px;
+		top: 100%;
+		z-index: 2;
+		font-size: 12px;
+		line-height: 14px;
+		color: #f02930;
+		white-space: nowrap;
+		pointer-events: none;
+		opacity: 0;
+		visibility: hidden; }
+
+.form__phone-error._visible {
+		opacity: 1;
+		visibility: visible; }
 
 textarea.form__input {
 		min-height: 100px;

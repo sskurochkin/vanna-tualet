@@ -17,6 +17,11 @@ $page = htmlspecialchars(HTTP::_GP('page', "", true));
 $phone = htmlspecialchars(HTTP::_GP('phone', ""));
 $email = htmlspecialchars(HTTP::_GP('email', ""));
 
+if (!preg_match('/^\+375\((25|29|33|44)\)-\d{3}-\d{2}-\d{2}$/', $phone)) {
+    echo json_encode(["result" => "error", "resultfile" => "file", "status" => "Некорректный номер телефона"]);
+    exit;
+}
+
 // Формирование самого письма
 $body = "
 <h2>".$page."</h2>

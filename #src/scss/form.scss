@@ -41,6 +41,7 @@
 }
 
 .form__item {
+    position: relative;
     padding: 0 20px;
     margin-bottom: 20px;
     flex: 1 0 50%;
@@ -82,6 +83,26 @@
 
 ._error {
     box-shadow: 0 0 5px red;
+}
+
+.form__phone-error {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    top: 100%;
+    z-index: 2;
+    font-size: 12px;
+    line-height: 14px;
+    color: $red;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.form__phone-error._visible {
+    opacity: 1;
+    visibility: visible;
 }
 
 textarea.form__input {
