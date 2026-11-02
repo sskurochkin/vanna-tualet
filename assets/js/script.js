@@ -224,14 +224,30 @@ function initPhoneMasks() {
     input.setAttribute('inputmode', 'tel');
     input.setAttribute('autocomplete', 'tel');
     phoneErrorNode(input);
-    input.addEventListener('focus', function () {
+    function ensurePhonePrefix() {
       if (input.value === '') {
         input.value = PHONE_EMPTY;
       }
+    }
 
+    function placePhoneCaret() {
+      if (document.activeElement !== input || input.value === '') {
+        return;
+      }
+
+      let caret = phoneCaret(input.value);
+      input.setSelectionRange(caret, caret);
+    }
+
+    input.addEventListener('pointerdown', function () {
+      ensurePhonePrefix();
+    });
+    input.addEventListener('focus', function () {
+      ensurePhonePrefix();
+      placePhoneCaret();
       window.setTimeout(function () {
-        let caret = phoneCaret(input.value);
-        input.setSelectionRange(caret, caret);
+        ensurePhonePrefix();
+        placePhoneCaret();
       }, 0);
     });
     input.addEventListener('blur', function () {
